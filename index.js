@@ -60,4 +60,48 @@ window.onload = function () {
 /*TRYING GSAP*/
 gsap.from(".menu", { duration: 1, y: "-100%", ease: "bounce" });
 
-/*gsap.from('.hero-section', { duration: 1, y: '-150%', delay: .5, ease: 'bounce' });*/
+gsap.to(".avatar", {
+  duration: 1,
+  y: -10,
+  repeat: -1,
+  yoyo: true,
+  ease: "power1.inOut",
+});
+
+gsap.from(".about-section", {
+  duration: 0.5,
+  y: 50,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".about-section",
+    start: "top 70%",
+    lazy: false,
+  },
+});
+
+gsap.from(".services-section", {
+  duration: 0.5,
+  y: 50,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".about-section",
+    start: "55%",
+    lazy: false,
+  },
+});
+
+// Select all menu items
+const menuItems = document.querySelectorAll(".menu-item");
+
+// Loop through each menu item
+menuItems.forEach((item) => {
+  // On mouse enter
+  item.addEventListener("mouseenter", () => {
+    gsap.to(item, { duration: 0.2, y: -3, ease: "power1.out" });
+  });
+
+  // On mouse leave
+  item.addEventListener("mouseleave", () => {
+    gsap.to(item, { duration: 0.2, y: 0, ease: "power1.in" });
+  });
+});
