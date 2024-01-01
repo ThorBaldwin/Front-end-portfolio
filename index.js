@@ -68,28 +68,6 @@ gsap.to(".avatar", {
   ease: "power1.inOut",
 });
 
-gsap.from(".about-section", {
-  duration: 0.5,
-  y: 50,
-  opacity: 0,
-  scrollTrigger: {
-    trigger: ".about-section",
-    start: "top 70%",
-    lazy: false,
-  },
-});
-
-gsap.from(".services-section", {
-  duration: 0.5,
-  y: 50,
-  opacity: 0,
-  scrollTrigger: {
-    trigger: ".about-section",
-    start: "55%",
-    lazy: false,
-  },
-});
-
 // Select all menu items
 const menuItems = document.querySelectorAll(".menu-item");
 
